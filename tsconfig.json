@@ -19,7 +19,9 @@
       "@/*" : ["./src/*"],
       "@components/*" : ["./src/components/*"],
       "@pages/*" : ["./src/pages/*"],
-      "@styles/*" : ["./src/styles/*"]
+      "@styles/*" : ["./src/styles/*"],
+      "@redux/*" : ["./src/redux/*"],
+      "@hooks/*" : ["./src/hooks/*"],
     }
   },
   "include": ["src"],

@@ -6,8 +6,7 @@ interface HeaderProps {
 }
 
 export function Header({ activePage = 'Home' }: HeaderProps) {
-  const logoImg =
-    'https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png'
+  const logoImg = '/src/assets/logo.png'
 
   return (
     <Flex
@@ -39,6 +38,10 @@ export function Header({ activePage = 'Home' }: HeaderProps) {
             py={1}
             px={3}
             rounded="xl"
+            transition="all"
+            _hover={{
+              bgColor: activePage === 'Home' ? 'gray.300' : '',
+            }}
           >
             Home
           </Text>
@@ -53,8 +56,12 @@ export function Header({ activePage = 'Home' }: HeaderProps) {
             border={activePage === 'List' ? '2px' : '0'}
             borderColor="white"
             rounded="xl"
+            transition="all"
+            _hover={{
+              bgColor: activePage === 'List' ? 'gray.300' : '',
+            }}
           >
-            List
+            Lista
           </Text>
         </Link>
       </Flex>

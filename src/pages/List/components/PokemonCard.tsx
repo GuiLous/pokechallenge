@@ -1,13 +1,40 @@
 import { Box, Button, Flex, Image, Text, Tooltip } from '@chakra-ui/react'
 import { BookmarkSimple } from '@phosphor-icons/react'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { PokemonDTO } from '@/dtos/PokemonDTO'
+import {
+  addFavorite,
+  getFavorites,
+  removeFavorite,
+} from '@/redux/favoritesSlice'
+import useLocalStorage from '@/hooks/useLocalStorage'
 
 interface PokemonCardProps {
   data: PokemonDTO
 }
 
 export function PokemonCard({ data }: PokemonCardProps) {
+  const dispatch = useDispatch()
+  const { favorites } = useSelector(getFavorites)
+
+  const { setFavoritesOnStorage } = useLocalStorage()
+
+  const handleAddFavorite = (id: number) => {
+    dispatch(addFavorite(id))
+    setFavoritesOnStorage([...favorites, id])
+  }
+
+  const handleRemoveFavorite = (id: number) => {
+    dispatch(removeFavorite(id))
+
+    const favoritesFiltered = favorites.filter(
+      (favoriteId: number) => favoriteId !== id,
+    )
+
+    setFavoritesOnStorage(favoritesFiltered)
+  }
+
   return (
     <Flex
       bgColor="gray.50"
@@ -60,8 +87,29 @@ export function PokemonCard({ data }: PokemonCardProps) {
             display="flex"
             _hover={{ color: 'yellow.400' }}
           >
-            <Tooltip label="Adicionar aos favoritos" aria-label="Um tooltip">
-              <BookmarkSimple size={24} />
+            <Tooltip
+              color="white"
+              bgColor="yellow.400"
+              label={
+                favorites.includes(data.id)
+                  ? 'Remover dos favoritos'
+                  : 'Adicionar aos favoritos'
+              }
+              aria-label="Um tooltip"
+            >
+              {favorites.includes(data.id) ? (
+                <BookmarkSimple
+                  size={24}
+                  weight={favorites.includes(data.id) && 'fill'}
+                  color={favorites.includes(data.id) && '#FFCC00'}
+                  onClick={() => handleRemoveFavorite(data.id)}
+                />
+              ) : (
+                <BookmarkSimple
+                  size={24}
+                  onClick={() => handleAddFavorite(data.id)}
+                />
+              )}
             </Tooltip>
           </Button>
         </Box>
