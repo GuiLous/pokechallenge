@@ -1,13 +1,12 @@
 import { Box, Flex, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
+import logoImg from '@assets/logo.png'
 
 interface HeaderProps {
   activePage?: 'Home' | 'List'
 }
 
 export function Header({ activePage = 'Home' }: HeaderProps) {
-  const logoImg = '/src/assets/logo.png'
-
   return (
     <Flex
       as="header"

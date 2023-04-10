@@ -7,13 +7,12 @@ import {
   Image,
   Text,
 } from '@chakra-ui/react'
-
-import { Header } from '@/components/Header'
 import { Link } from 'react-router-dom'
 
-export function Home() {
-  const ashImage = '/src/assets/ash-img.png'
+import { Header } from '@/components/Header'
+import ashImage from '@assets/ash-img.png'
 
+export function Home() {
   return (
     <Box>
       <Header />
