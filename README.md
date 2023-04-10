@@ -12,7 +12,7 @@
   <a href="#tecnologias">Tecnologias</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requerimentos">Requerimentos</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-começando">Começando</a> &#xa0; &#xa0; | &#xa0;
-  <a href="#demo">Demo</a> &#xa0; &#xa0;
+  <a href="#Demo">Demo</a> &#xa0; &#xa0;
 </p>
 
 <br>
@@ -22,7 +22,7 @@
 Projeto para para listar pokémons consumindo a API pokeapi, uma api muita famosa que disponibiliza os dados de todos os poémons de todas as gerações.
 
 
-## :Tecnologias ##
+## Tecnologias ##
 
 As seguintes tecnologias foram utilizadas no projeto:
 
@@ -55,7 +55,7 @@ $ npm run dev
 
 # The server will initialize in the <http://localhost:5173>
 ```
-## :demo: Demo ##
+## Demo ##
 
 <a href="https://pokechallenge-swart.vercel.app/">https://pokechallenge-swart.vercel.app/</a>
 
