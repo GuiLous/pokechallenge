@@ -8,6 +8,7 @@ interface PaginationProps {
   previousPage: string | null
   getPreviousPage: () => void
   getNextPage: () => void
+  isLoading?: boolean
 }
 
 export function Pagination({
@@ -17,13 +18,17 @@ export function Pagination({
   nextPage,
   previousPage,
   totalPages,
+  isLoading = false,
 }: PaginationProps) {
+  const canClickPreviousPage = previousPage !== null && !isLoading
+  const canClickNextPage = nextPage !== null && !isLoading
+
   return (
     <Flex as="div" alignItems="center" flexDir="row">
       <Button
         variant="unstyled"
         cursor={previousPage === null ? 'initial' : 'pointer'}
-        onClick={previousPage !== null ? getPreviousPage : () => {}}
+        onClick={canClickPreviousPage ? getPreviousPage : () => {}}
         aria-label="previous page"
       >
         <CaretCircleLeft
@@ -38,7 +43,7 @@ export function Pagination({
       <Button
         variant="unstyled"
         cursor={nextPage === null ? 'initial' : 'pointer'}
-        onClick={nextPage !== null ? getNextPage : () => {}}
+        onClick={canClickNextPage ? getNextPage : () => {}}
         aria-label="next page"
       >
         <CaretCircleRight

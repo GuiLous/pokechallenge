@@ -183,6 +183,7 @@ export function List() {
             getNextPage={handleGetNextPage}
             nextPage={nextPage}
             previousPage={previousPage}
+            isLoading={isLoading}
           />
         )}
       </Flex>
