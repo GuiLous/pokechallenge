@@ -2,13 +2,13 @@ import { Box, Button, Flex, Image, Text, Tooltip } from '@chakra-ui/react'
 import { BookmarkSimple } from '@phosphor-icons/react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { PokemonDTO } from '@/dtos/PokemonDTO'
+import { PokemonDTO } from '@dtos/PokemonDTO'
 import {
   addFavorite,
   getFavorites,
   removeFavorite,
-} from '@/redux/favoritesSlice'
-import useLocalStorage from '@/hooks/useLocalStorage'
+} from '@redux/favoritesSlice'
+import useLocalStorage from '@hooks/useLocalStorage'
 
 interface PokemonCardProps {
   data: PokemonDTO

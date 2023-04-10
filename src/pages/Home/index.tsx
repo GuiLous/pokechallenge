@@ -9,7 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-import { Header } from '@/components/Header'
+import { Header } from '@components/Header'
 import ashImage from '@assets/ash-img.png'
 
 export function Home() {

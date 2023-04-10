@@ -16,13 +16,13 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*" : ["./src/*"],
       "@components/*" : ["./src/components/*"],
       "@pages/*" : ["./src/pages/*"],
       "@styles/*" : ["./src/styles/*"],
       "@redux/*" : ["./src/redux/*"],
       "@hooks/*" : ["./src/hooks/*"],
       "@assets/*" : ["./src/assets/*"],
+      "@dtos/*" : ["./src/dtos/*"],
     }
   },
   "include": ["src"],

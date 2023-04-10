@@ -7,15 +7,16 @@ import {
   VStack,
   useToast,
 } from '@chakra-ui/react'
-import { PokemonCard } from './components/PokemonCard'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 
-import { Pagination } from '@/components/Pagination'
-import { Header } from '@/components/Header'
-import { PokemonDTO } from '@/dtos/PokemonDTO'
-import { getFavorites, saveFavoritesFromStorage } from '@/redux/favoritesSlice'
-import useLocalStorage from '@/hooks/useLocalStorage'
+import useLocalStorage from '@hooks/useLocalStorage'
+import { Pagination } from '@components/Pagination'
+import { Header } from '@components/Header'
+import { PokemonDTO } from '@dtos/PokemonDTO'
+import { getFavorites, saveFavoritesFromStorage } from '@redux/favoritesSlice'
+
+import { PokemonCard } from './components/PokemonCard'
 
 export function List() {
   const { getFavoritesFromStorage } = useLocalStorage()
