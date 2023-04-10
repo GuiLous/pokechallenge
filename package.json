@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest --silent"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",

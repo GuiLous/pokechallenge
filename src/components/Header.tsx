@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from '@chakra-ui/react'
+import { Box, Flex, Image, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import logoImg from '@assets/logo.png'
 
@@ -18,7 +18,7 @@ export function Header({ activePage = 'Home' }: HeaderProps) {
       boxShadow="md"
     >
       <Link to="/">
-        <img
+        <Image
           alt="pokeapi-logo"
           src={logoImg}
           className="navbar-img"

@@ -24,7 +24,7 @@ export function Pagination({
         variant="unstyled"
         cursor={previousPage === null ? 'initial' : 'pointer'}
         onClick={previousPage !== null ? getPreviousPage : () => {}}
-        disabled={true}
+        aria-label="previous page"
       >
         <CaretCircleLeft
           color={previousPage === null ? '#9699B0' : '#D1D2DC'}
@@ -39,6 +39,7 @@ export function Pagination({
         variant="unstyled"
         cursor={nextPage === null ? 'initial' : 'pointer'}
         onClick={nextPage !== null ? getNextPage : () => {}}
+        aria-label="next page"
       >
         <CaretCircleRight
           color={nextPage === null ? '#9699B0' : '#D1D2DC'}

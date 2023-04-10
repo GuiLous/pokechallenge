@@ -8,4 +8,9 @@ export default {
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.tsx', '!src/**/*.spec.tsx'],
   coverageReporters: ['lcov', 'json'],
+  moduleNameMapper: {
+    '\\.(scss|css|sass)': 'identity-obj-proxy',
+    '\\.(png|jpg|webp|ttf|woff|woff2|svg|mp4)$':
+      '<rootDir>/src/mocks/fileMock.ts',
+  },
 }
