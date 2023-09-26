@@ -6,13 +6,19 @@ import {
   Heading,
   Image,
   Text,
+  VStack,
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-import { Header } from '@components/Header'
 import ashImage from '@assets/ash-img.png'
+import matchFoundAudio from '@assets/match_found.ogg'
+
+import { Header } from '@components/Header'
+import { useAudio } from '@hooks/useAudio'
 
 export function Home() {
+  const [toggle] = useAudio(matchFoundAudio)
+
   return (
     <Box>
       <Header />
@@ -53,7 +59,23 @@ export function Home() {
               até mesmo MOBA.
             </Text>
 
-            <Link to="list">
+            <VStack>
+              <Link to="list">
+                <Button
+                  bgColor="yellow.400"
+                  color="white"
+                  fontSize={22}
+                  fontWeight="bold"
+                  w="full"
+                  boxShadow="xl"
+                  _hover={{
+                    bgColor: 'yellow.500',
+                  }}
+                >
+                  Conheça os Pokémons!
+                </Button>
+              </Link>
+
               <Button
                 bgColor="yellow.400"
                 color="white"
@@ -64,10 +86,11 @@ export function Home() {
                 _hover={{
                   bgColor: 'yellow.500',
                 }}
+                onClick={() => toggle()}
               >
-                Conheça os Pokémons!
+                Play
               </Button>
-            </Link>
+            </VStack>
           </Flex>
         </HStack>
       </Flex>
