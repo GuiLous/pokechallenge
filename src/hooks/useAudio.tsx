@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 
 export const useAudio = (url: string) => {
   const [audio] = useState(new Audio(url))
@@ -8,9 +8,17 @@ export const useAudio = (url: string) => {
 
   audio.crossOrigin = 'anonymous'
 
+  const controlAudio = useCallback(async () => {
+    try {
+      playing ? await audio.play() : audio.pause()
+    } catch (error) {
+      console.log(error)
+    }
+  }, [audio, playing])
+
   useEffect(() => {
-    playing ? audio.play() : audio.pause()
-  }, [playing, audio])
+    controlAudio()
+  }, [controlAudio])
 
   useEffect(() => {
     audio.addEventListener('ended', () => setPlaying(false))
